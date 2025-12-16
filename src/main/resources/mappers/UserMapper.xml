@@ -5,6 +5,18 @@
         SELECT * FROM users WHERE id = #{id}
     </select>
 
+    <select id="getUserById" parameterType="int" resultType="com.example.onlineeducationplatform.model.User">
+        SELECT * FROM users WHERE id = #{id}
+    </select>
+
+    <select id="login" resultType="com.example.onlineeducationplatform.model.User">
+        SELECT * FROM users WHERE username = #{username} AND password = #{password}
+    </select>
+
+    <select id="getAllUsers" resultType="com.example.onlineeducationplatform.model.User">
+        SELECT * FROM users
+    </select>
+
     <insert id="insertUser" parameterType="com.example.onlineeducationplatform.model.User">
         INSERT INTO users (username, password, email) VALUES (#{username}, #{password}, #{email})
     </insert>
